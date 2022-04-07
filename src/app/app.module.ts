@@ -15,6 +15,7 @@ import { ResourcesComponent } from './components/resources/resources.component';
 import { ContainersComponent } from './components/containers/containers.component';
 import { ServicesComponent } from './components/services/services.component';
 import { ConnectorTypesComponent } from './components/connector-types/connector-types.component';
+import { TidyPipe } from './pipes/tidy.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ConnectorTypesComponent } from './components/connector-types/connector-
     ResourcesComponent,
     ContainersComponent,
     ServicesComponent,
-    ConnectorTypesComponent
+    ConnectorTypesComponent,
+    TidyPipe
   ],
   imports: [
     BrowserModule,

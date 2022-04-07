@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { firstValueFrom } from 'rxjs';
+import { ApiService } from 'src/app/services/api.service';
 import { PlatformResources } from 'src/interfaces';
 
 @Component({
@@ -9,7 +11,7 @@ import { PlatformResources } from 'src/interfaces';
 })
 export class ResourcesComponent implements OnInit {
 
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient, public api: ApiService) { }
 
   Data: PlatformResources = {};
 
@@ -18,14 +20,7 @@ export class ResourcesComponent implements OnInit {
   }
 
   public async getData() {
-
-    try {
-      this.Data = await this.http.get("http://192.168.159.128:9001/shells/urn%3A%3A%3AAAS%3A%3A%3AiipEcosphere%23/aas/submodels/resources/submodel").toPromise() as PlatformResources;
-      console.log(this.Data);
-    } catch(e) {
-      console.log(e);
-    }
-
+    this.Data = await this.api.getResources();
   }
 
 }

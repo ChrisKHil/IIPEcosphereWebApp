@@ -8,11 +8,10 @@
         <div *ngFor="let element2 of element.value">
           <div *ngIf="!element2.invokable">
             <span class="shortId">{{ element2.idShort }}: </span>
-            <span *ngIf="element2.value"> {{ element2.value }} </span>
+            <span> {{ element2.value }} </span>
           </div>
         </div>
       </mat-card-content>
     </mat-card>
   </div>
-
 </div>

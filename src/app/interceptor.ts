@@ -8,7 +8,6 @@ export class Interceptor implements HttpInterceptor{
       .set('Content-Type', 'application/json')
     })
 
-    console.log(newReq);
 
     return next.handle(request);
   }
